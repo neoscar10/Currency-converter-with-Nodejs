@@ -5,7 +5,9 @@ import express from 'express';
 import axios from 'axios';
 import bodyParser from 'body-parser';
 
-const youAPIKey = "b17413570b15334d4add7f94";
+// put in your API key
+// get you API key from https://app.exchangerate-api.com
+const youAPIKey = "";
 
 const app = express();
 // port number of choice
@@ -30,7 +32,6 @@ app.post('/', async (req, res)=>{
   const to = req.body.to;
 
   // using axios to make the get req to the rout and inserting you API key
-  // get you API key from https://app.exchangerate-api.com
   // look at the console log for response.data to understand the structure of the data
     try {
         const response = await axios.get(`https://v6.exchangerate-api.com/v6/${youAPIKey}/latest/${from}`);
