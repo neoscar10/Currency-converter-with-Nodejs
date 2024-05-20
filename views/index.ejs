@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Currency Converter</h1>
+        <form class="form-inline" action="/" method="POST">
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="fromCurrency" class="sr-only">From</label>
+                <select name="from" class="form-control" id="fromCurrency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <option value="NGN">NGN</option>
+                    <!-- Add more currencies as needed -->
+                </select>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="toCurrency" class="sr-only">To</label>
+                <select name="to" class="form-control" id="toCurrency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <option value="NGN">NGN</option>
+                    <!-- Add more currencies as needed -->
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Convert</button>
+        </form>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Conversion Rate</h5>
+                <% if (locals.rate) {%>
+                    <p class="card-text" id="conversionRate">Rate: 1 <%= from %> =  <%= rate %> <%= to %></p>
+                <% } else{%>
+                    <p class="card-text" id="conversionRate">Select currencies to see the conversion rate.</p>
+                <%  } %>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
