@@ -44,6 +44,9 @@ app.post('/', async (req, res)=>{
         });
       } catch (error) {
         console.error(error);
+        res.render('index.ejs', {
+          error: "Unable to retrieve exchange rate"
+        })
       }
 })
 

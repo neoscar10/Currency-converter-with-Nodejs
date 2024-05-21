@@ -40,6 +40,8 @@
                 <h5 class="card-title">Conversion Rate</h5>
                 <% if (locals.rate) {%>
                     <p class="card-text" id="conversionRate">Rate: 1 <%= from %> =  <%= rate %> <%= to %></p>
+                <%} else if (locals.error) {%>
+                    <p class="card-text text-danger" id="conversionRate"><%= error %></p>
                 <% } else{%>
                     <p class="card-text" id="conversionRate">Select currencies to see the conversion rate.</p>
                 <%  } %>
